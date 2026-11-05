@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class AboutController extends Controller
 {
-    public function index()
+    public function about()
     {
         return view('about');
     }

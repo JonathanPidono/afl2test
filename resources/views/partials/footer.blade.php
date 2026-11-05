@@ -5,6 +5,6 @@
       <a href="{{ route('blog') }}" class="hover:text-primary">Blog</a>
     </nav>
   <aside>
-    <p>Copyright © {{ date('Y') }} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {{ date('Y') }} - All right reserved by Group 2</p>
   </aside>
 </footer>
