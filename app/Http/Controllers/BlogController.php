@@ -2,45 +2,61 @@
 
 namespace App\Http\Controllers;
 
-class BlogController extends Controller
-{
-    public function blog()
-    {
-        $posts = [
+class BlogController extends Controller{
+    public function blog(){
+        $hero = [
+            'Judul' => 'Kisah Hidup Kartini',
+            'Deskripsi' => 'Pencapaian Kartini semasa hidupnya, dan pengaruh perjuangannya setelah ia wafat.',
+            'Tombol' => 'Tentang Website Ini',
+            'Route' => 'about',
+        ];
+
+        $before = [
             [
-                'judul' => 'Masa Kecil di Jepara',
-                'isi'   => 'Kartini lahir pada 21 April 1879 di Mayong, Jepara. Ayahnya, R.M. Adipati Ario Sosroningrat, kemudian menjabat Bupati Jepara. Sebagai anak bangsawan, Kartini boleh bersekolah di ELS (Europese Lagere School) dan di sana ia belajar bahasa Belanda.',
+                'Judul' => 'Mendobrak Tradisi Pingitan Kolonial',
+                'Tanggal' => '1892-1903',
+                'Artikel' => 'Menjadi salah satu perempuan bangsawan Jawa pertama yang berani mengkritik adat pingitan, poligami, dan kawin paksa melalui pemikiran kritisnya.',
             ],
             [
-                'judul' => 'Masa Pingitan',
-                'isi'   => 'Pada usia 12 tahun Kartini harus berhenti sekolah dan dipingit di rumah sesuai adat saat itu. Ia tidak berhenti belajar. Buku, koran, dan majalah berbahasa Belanda menjadi jendelanya untuk mengenal dunia luar.',
+                'Judul' => 'Membuka Jaringan Korespondensi Internasional',
+                'Tanggal' => '1899-1904',
+                'Artikel' => 'Berhasil membangun jaringan komunikasi dengan para intelektual dan aktivis pergerakan di Belanda (seperti Rosa Abendanon dan Stella Zeehandelaar) untuk menyuarakan kondisi perempuan pribumi.',
             ],
             [
-                'judul' => 'Surat untuk Sahabat',
-                'isi'   => 'Kartini mulai berkirim surat dengan sahabat-sahabatnya di Belanda, di antaranya Stella Zeehandelaar dan Rosa Abendanon. Dalam surat itu ia menulis tentang pendidikan perempuan, adat yang mengekang, dan harapannya untuk kemajuan bangsanya.',
+                'Judul' => 'Mendirikan Sekolah Wanita Pertama',
+                'Tanggal' => '1903',
+                'Artikel' => 'Berhasil mendirikan sekolah khusus perempuan di Jepara (sebelum menikah) dan di Rembang dengan dukungan suaminya, yang mengajarkan baca-tulis, kerajinan tangan, dan budi pekerti.',
             ],
             [
-                'judul' => 'Sekolah untuk Anak Perempuan',
-                'isi'   => 'Kartini menikah dengan K.R.M. Adipati Ario Singgih Djojo Adhiningrat, Bupati Rembang. Suaminya mendukung cita-citanya, dan Kartini mendirikan sekolah bagi anak perempuan di lingkungan kantor kabupaten Rembang.',
-            ],
-            [
-                'judul' => 'Wafat di Usia Muda',
-                'isi'   => 'Kartini melahirkan putranya, Soesalit Djojoadhiningrat, pada 13 September 1904. Empat hari kemudian, pada 17 September 1904, Kartini wafat di usia 25 tahun dan dimakamkan di Desa Bulu, Rembang.',
-            ],
-            [
-                'judul' => 'Habis Gelap Terbitlah Terang',
-                'isi'   => 'J.H. Abendanon mengumpulkan surat-surat Kartini dan menerbitkannya dengan judul Door Duisternis tot Licht. Versi bahasa Indonesianya dikenal sebagai Habis Gelap Terbitlah Terang dan sampai sekarang masih dibaca banyak orang.',
-            ],
-            [
-                'judul' => 'Pahlawan Nasional',
-                'isi'   => 'Presiden Soekarno menetapkan Kartini sebagai Pahlawan Kemerdekaan Nasional melalui Keppres No. 108 Tahun 1964. Tanggal lahirnya, 21 April, diperingati setiap tahun sebagai Hari Kartini.',
-            ],
-            [
-                'judul' => 'Warisan Kartini',
-                'isi'   => 'Gagasan Kartini tentang hak perempuan untuk belajar menjadi dasar bagi banyak perjuangan pendidikan sesudahnya. Sekolah Kartini dibuka di beberapa kota sejak 1912, dan namanya tetap menjadi simbol kesetaraan dalam pendidikan.',
+                'Judul' => 'Mengenalkan Ukiran Jepara ke Dunia',
+                'Tanggal' => '1898-1904',
+                'Artikel' => 'Membantu mempromosikan dan menjual kerajinan ukiran kayu karya pengrajin lokal Jepara ke Batavia hingga Belanda, sehingga menaikkan taraf ekonomi para pengrajin pada masa itu.',
             ],
         ];
 
-        return view('blog', ['posts' => $posts]);
+        $after = [
+            [
+                'Judul' => 'Penerbitan Buku Monumental',
+                'Tanggal' => '1911',
+                'Artikel' => 'Pemikiran-pemikirannya berhasil dibukukan oleh J.H. Abendanon dengan judul Door Duisternis tot Licht (1911), yang kemudian diterjemahkan ke bahasa Melayu menjadi "Habis Gelap Terbitlah Terang" (1922), lalu diterjemahkan ulang oleh Armijn Pane (1938). Buku ini menjadi pemicu bangkitnya gerakan perempuan di Indonesia.',
+            ],
+            [
+                'Judul' => 'Penyebaran Sekolah Kartini secara Masif',
+                'Tanggal' => '1912',
+                'Artikel' => 'Inspirasi perjuangannya mendorong keluarga Van Deventer mendirikan Yayasan Kartini pada tahun 1912, yang kemudian berhasil membangun Sekolah Kartini di berbagai kota besar seperti Semarang, Batavia, Surabaya, Yogyakarta, Malang, hingga Madiun.',
+            ],
+            [
+                'Judul' => 'Gelar Pahlawan Nasional Indonesia',
+                'Tanggal' => '1964',
+                'Artikel' => 'Secara resmi dianugerahi gelar Pahlawan Kemerdekaan Nasional oleh Presiden Soekarno melalui Keputusan Presiden RI No. 108 Tahun 1964.',
+            ],
+            [
+                'Judul' => 'Penetapan Hari Nasional',
+                'Tanggal' => '1964',
+                'Artikel' => 'Hari lahirnya, 21 April, ditetapkan secara resmi sebagai Hari Kartini yang diperingati secara nasional setiap tahun di Indonesia untuk merayakan emansipasi wanita.',
+            ],
+        ];
+
+        return view('blog', ['hero' => $hero, 'before' => $before, 'after' => $after]);
     }
 }
